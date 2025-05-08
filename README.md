@@ -1,4 +1,4 @@
-[#Circle of Fifths Interactive](https://guitarsetgo.github.io/Circle-Of-Fifths/)
+# [Circle of Fifths Interactive](https://guitarsetgo.github.io/Circle-Of-Fifths/)
 
 ## Description
 This project is an interactive Circle of Fifths web application. It provides a visual representation of the Circle of Fifths, allowing users to explore musical keys, scales, and chord progressions. The application is designed to be an educational tool for musicians, students, and anyone interested in music theory.

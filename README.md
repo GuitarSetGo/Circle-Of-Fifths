@@ -53,4 +53,4 @@ Whether you are a student, a composer, or just curious about music, this tool he
 *   [LinkedIn](https://www.linkedin.com/in/josh4dev)
 
 ---
-*© 2025 - Circle of Fifths Interactive*
+*© 2026 - Circle of Fifths Interactive*

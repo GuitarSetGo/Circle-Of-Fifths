@@ -3,83 +3,129 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Circle of Fifths — Remastered</title>
-
-    <link rel="stylesheet" href="styles.css">
+    <meta name="description" content="Guitar Scale Generator - Interactive Fretboard Visualizer">
+    <meta name="keywords" content="guitar, scales, fretboard, music theory, scale generator">
+    <meta name="author" content="Joshua Gonzalez">
+    <title>Scale Generator — Guitar Tool</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <header>
-    <h1>Circle of Fifths</h1>
-    <p>Interactive Music Theory Reference</p>
+    <h1>Scale Generator</h1>
+    <p>Guitar Fretboard Visualizer · by Joshua Gonzalez</p>
 </header>
 
-<div class="container">
-    <div class="legend">
-        <div class="legend-item">
-            <div class="legend-dot major"></div>
-            <span>MAJOR KEYS (outer)</span>
+<div class="main-wrapper">
+
+    <div class="card">
+        <div class="controls">
+            <div class="control-group">
+                <label>Scale</label>
+                <select id="scale">
+                    <optgroup label="Greek Modes">
+                        <option value="ionian">Ionian (Major Scale)</option>
+                        <option value="dorian">Dorian</option>
+                        <option value="phrygian">Phrygian</option>
+                        <option value="lydian">Lydian</option>
+                        <option value="mixolydian">Mixolydian</option>
+                        <option value="aeolian">Aeolian (Minor Scale)</option>
+                        <option value="locrian">Locrian</option>
+                    </optgroup>
+                    <optgroup label="Pentatonic">
+                        <option value="pentatonic_major">Major Pentatonic</option>
+                        <option value="pentatonic_minor">Minor Pentatonic</option>
+                        <option value="blues">Blues</option>
+                    </optgroup>
+                    <optgroup label="Japanese Scales">
+                        <option value="hirajoshi">Hirajoshi</option>
+                        <option value="kumoi">Kumoi</option>
+                        <option value="japanese_insen">Japanese Insen</option>
+                    </optgroup>
+                    <optgroup label="Bebop Scales">
+                        <option value="major_bebop">Major Bebop</option>
+                        <option value="minor_bebop">Minor Bebop</option>
+                        <option value="bebop_dominant">Bebop Dominant</option>
+                        <option value="bebop_locrian">Bebop Locrian ♮2</option>
+                        <option value="bebop_dorian">Bebop Dorian</option>
+                    </optgroup>
+                    <optgroup label="Symmetrical Scales">
+                        <option value="whole_tone">Whole Tone</option>
+                        <option value="augmented">Augmented</option>
+                        <option value="diminished">Diminished</option>
+                    </optgroup>
+                    <optgroup label="Other Scales">
+                        <option value="harmonic_minor">Harmonic Minor</option>
+                        <option value="melodic_minor">Melodic Minor</option>
+                        <option value="harmonic_major">Harmonic Major</option>
+                        <option value="hungarian_minor">Hungarian Minor</option>
+                        <option value="hungarian_major">Hungarian Major</option>
+                        <option value="neapolitan_minor">Neapolitan Minor</option>
+                        <option value="neapolitan_major">Neapolitan Major</option>
+                        <option value="enigmatic_minor">Enigmatic Minor</option>
+                        <option value="enigmatic">Enigmatic</option>
+                        <option value="composite_ii">Composite II</option>
+                        <option value="ionian_flat5">Ionian ♭5</option>
+                        <option value="locrian_7">Locrian ♮7</option>
+                        <option value="persian">Persian</option>
+                        <option value="hindu">Hindu</option>
+                        <option value="pelog">Pelog</option>
+                        <option value="dominant_sus">Dominant Sus</option>
+                        <option value="eight_tone_spanish">8-Tone Spanish</option>
+                    </optgroup>
+                </select>
+            </div>
+            <div class="control-group">
+                <label>Key</label>
+                <select id="key">
+                    <option value="A">A</option>
+                    <option value="A#">A# / Bb</option>
+                    <option value="B">B</option>
+                    <option value="C">C</option>
+                    <option value="C#">C# / Db</option>
+                    <option value="D">D</option>
+                    <option value="D#">D# / Eb</option>
+                    <option value="E">E</option>
+                    <option value="F">F</option>
+                    <option value="F#">F# / Gb</option>
+                    <option value="G">G</option>
+                    <option value="G#">G# / Ab</option>
+                </select>
+            </div>
+            <button class="btn-generate" onclick="generateScale()">Generate Scale</button>
         </div>
-        <div class="legend-item">
-            <div class="legend-dot minor"></div>
-            <span>MINOR KEYS (inner)</span>
+
+        <div class="scale-info-bar" id="scaleInfoBar">
+            <span class="placeholder" style="padding:6px 0;font-size:11px;">Select a scale and key above</span>
         </div>
     </div>
 
-    <div class="clock-wrapper">
-        <div class="clock" id="clock">
-            <div class="center-text">
-                CIRCLE<br>OF<br>FIFTHS
-                <span>CLICK A KEY</span>
+    <div class="card">
+        <div class="scale-name-display" id="scaleNameDisplay" style="display:none;">
+            <div class="scale-full-name" id="scaleFullName"></div>
+            <div class="scale-intervals" id="scaleIntervals"></div>
+        </div>
+        <div class="fretboard-wrapper">
+            <div id="mastilContainer">
+                <div class="placeholder">◈ SELECT A SCALE TO VISUALIZE THE FRETBOARD ◈</div>
             </div>
-            <div id="clockFace"></div>
+        </div>
+        <div class="legend" id="legend" style="display:none;">
+            <div class="legend-item"><div class="legend-swatch root"></div><span>ROOT NOTE</span></div>
+            <div class="legend-item"><div class="legend-swatch scale"></div><span>SCALE NOTES</span></div>
+            <div class="legend-item legend-blue" id="legendBlue" style="display:none;"><div class="legend-swatch blue"></div><span>BLUE NOTE</span></div>
         </div>
     </div>
 
-    <div class="info-panel" id="infoPanel">
-        <div class="placeholder-text" id="placeholder">
-            ◈ SELECT A KEY TO BEGIN ◈
-        </div>
-        <div id="infoContent" style="display:none;">
-            <div class="info-panel-header">
-                <div class="key-badge" id="selectedKey"></div>
-                <div class="key-type-badge" id="keyTypeBadge"></div>
-                <button class="audio-btn" id="playBtn" onclick="playChord()">
-                    <div class="dot"></div>
-                    PLAY CHORD
-                </button>
-            </div>
-            <div class="info-grid">
-                <div class="info-card">
-                    <h3>⬡ Key Signature</h3>
-                    <p id="keySignature"></p>
-                </div>
-                <div class="info-card">
-                    <h3>⬡ Related Keys</h3>
-                    <p id="relatedKeys"></p>
-                </div>
-            </div>
-            <div class="chords-section">
-                <h3>◈ Diatonic Chords</h3>
-                <div class="chord-grid" id="chords"></div>
-            </div>
-            <div class="scale-section">
-                <h3>◈ Scale Notes</h3>
-                <div class="scale-notes" id="scale"></div>
-            </div>
-        </div>
-    </div>
 </div>
 
 <footer>
-    <div class="footer-content">
-        <p>Developed by <strong>Joshua Gonzalez</strong></p>
-        <p>© 2026 — Circle of Fifths Interactive v2.0</p>
-        <p>
-            <a href="https://github.com/GuitarSetGo" target="_blank">GitHub</a> |
-            <a href="https://www.linkedin.com/in/josh4dev" target="_blank">LinkedIn</a>
-        </p>
-    </div>
+    <p>
+        Developed by <strong>Joshua Gonzalez</strong> &nbsp;|&nbsp;
+        <a href="https://github.com/GuitarSetGo" target="_blank">GitHub</a> &nbsp;|&nbsp;
+        <a href="https://www.linkedin.com/in/josh4dev" target="_blank">LinkedIn</a>
+    </p>
+    <p style="margin-top:4px;">© 2025 — Scale Generator v2.0</p>
 </footer>
 
 <div class="toast" id="toast"></div>
@@ -87,4 +133,3 @@
 <script src="script.js"></script>
 </body>
 </html>
-

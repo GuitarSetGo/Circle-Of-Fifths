@@ -1,34 +1,57 @@
-# [Circle of Fifths Interactive](https://guitarsetgo.github.io/Circle-Of-Fifths/)
+# 🎵 Circle of Fifths — Remastered (v2.0)
 
-## Description
-This project is an interactive Circle of Fifths web application. It provides a visual representation of the Circle of Fifths, allowing users to explore musical keys, scales, and chord progressions. The application is designed to be an educational tool for musicians, students, and anyone interested in music theory.
+![Version](https://img.shields.io/badge/version-2.0.0-blueviolet)
+![License](https://img.shields.io/badge/license-MIT-blue)
+![Status](https://img.shields.io/badge/status-active-success)
 
-## Features
-- Interactive Circle of Fifths diagram
-- Display of major and minor keys
-- Key signature information
-- Related keys (relative minor/major, dominant, subdominant)
-- Chord progressions for each key
-- Scale display with enharmonic equivalents where applicable
+> **A modern, interactive music theory tool for the digital age.** 🎹✨
 
-## Technologies Used
-- HTML
-- CSS
-- JavaScript
+## 📖 Description
 
-## How to Use
-1. Visit [https://guitarsetgo.github.io/Circle-Of-Fifths/](https://guitarsetgo.github.io/Circle-Of-Fifths/)
-2. Click on any note in the Circle of Fifths to select a key.
-3. The information panel will update with details about the selected key:
-   - Key Signature
-   - Related Keys
-   - Chord Progression
-   - Scale (including enharmonic equivalent if applicable)
+**Circle of Fifths Interactive** is a web application designed to visualize the fundamental relationships in music theory. 
 
-## Installation
-No installation is required to use the web version. To run locally:
+This project has been **completely remastered** (v2.0) to provide a more immersive experience. It not only serves as a visual reference for keys, scales, and chord progressions but now features a **Cyber-Metal aesthetic** and a **built-in audio engine** to hear the theory in action.
 
-```bash
-git clone https://github.com/GuitarSetGo/Circle-Of-Fifths.git
-cd Circle-Of-Fifths
-open index.html
+Whether you are a student, a composer, or just curious about music, this tool helps you understand how musical keys connect.
+
+## ✨ New Features in v2.0
+
+*   **🎨 Modern UI/UX:** A complete visual overhaul featuring a "Dark Mode" aesthetic with neon accents, smooth transitions, and a responsive design that looks great on desktop and mobile.
+*   **🔊 Audio Synthesis:** Integrated **Web Audio API** support. Click on any key to hear the tonic chord (Major or Minor) played in real-time.
+*   **📱 Mobile Optimized:** Improved touch targets and layout adjustments for seamless use on smartphones and tablets.
+*   **🧠 Smart Logic:** Refactored JavaScript engine for accurate handling of enharmonic equivalents and scale generation.
+
+## 🚀 Core Features
+
+*   **Interactive Wheel:** clickable Circle of Fifths diagram separating Major (outer) and Minor (inner) keys.
+*   **Dynamic Info Panel:** Instantly updates to show:
+    *   **Key Signature:** Number of sharps (#) or flats (b).
+    *   **Related Keys:** Relative Minor/Major, Dominant (V), and Subdominant (IV).
+    *   **Diatonic Chords:** The 7 chords available in the selected key with Roman Numeral analysis.
+    *   **Scale Viewer:** Visual representation of the scale notes.
+
+## 🛠️ Technologies Used
+
+*   **HTML5** (Semantic structure)
+*   **CSS3** (Custom properties, Flexbox, Grid, Animations)
+*   **JavaScript (ES6+)** (DOM manipulation, Logic)
+*   **Web Audio API** (Sound synthesis)
+
+## 🎮 How to Use
+
+1.  **Visit the Live Demo:** [https://guitarsetgo.github.io/Circle-Of-Fifths/](https://guitarsetgo.github.io/Circle-Of-Fifths/)
+2.  **Select a Key:** Click on any note slice on the wheel.
+    *   *Outer Ring:* Major Keys
+    *   *Inner Ring:* Minor Keys
+3.  **Explore:** Read the panel to see the scale, chords, and relatives.
+4.  **Listen:** Click the **"PLAY CHORD"** button (or the key itself) to hear the harmony.
+
+## 👨‍💻 Author
+
+**Joshua Gonzalez**
+
+*   [GitHub Profile](https://github.com/GuitarSetGo)
+*   [LinkedIn](https://www.linkedin.com/in/josh4dev)
+
+---
+*© 2025 - Circle of Fifths Interactive*

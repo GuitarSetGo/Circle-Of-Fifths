@@ -1,4 +1,4 @@
-# 🎵 Circle of Fifths — Remastered (v2.0)
+# 🎵 [Circle of Fifths — Remastered (v2.0)](https://guitarsetgo.github.io/Circle-Of-Fifths)
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blueviolet)
 ![Status](https://img.shields.io/badge/status-active-success)

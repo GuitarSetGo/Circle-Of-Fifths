@@ -1,7 +1,6 @@
 # 🎵 Circle of Fifths — Remastered (v2.0)
 
 ![Version](https://img.shields.io/badge/version-2.0.0-blueviolet)
-![License](https://img.shields.io/badge/license-MIT-blue)
 ![Status](https://img.shields.io/badge/status-active-success)
 
 > **A modern, interactive music theory tool for the digital age.** 🎹✨
